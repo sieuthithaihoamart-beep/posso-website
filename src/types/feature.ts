@@ -33,18 +33,44 @@ export interface FAQ {
 
 export interface PersonalInfo {
   fullName: string
+  username: string
+  password: string
   phone: string
   email: string
 }
 
 export interface StoreInfo {
   storeName: string
-  storeSlug: string
-  province: string
 }
 
 export interface RegistrationData {
   personal: PersonalInfo
-  industry: string
   store: StoreInfo
+}
+
+export interface RegisterRequest {
+  storeName: string
+  username: string
+  password: string
+  name: string
+  phone?: string
+  email?: string
+}
+
+export interface RegisteredUser {
+  id: string
+  name: string
+  role: string
+  storeId: string
+  storeName: string
+  branchId: string
+}
+
+export interface RegisterResponse {
+  success: true
+  message: string
+  data: {
+    token: string
+    user: RegisteredUser
+  }
 }
