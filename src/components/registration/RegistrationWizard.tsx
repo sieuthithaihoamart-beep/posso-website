@@ -6,6 +6,7 @@ import StepProgress from './StepProgress'
 import StepInfo from './StepInfo'
 import StepStore from './StepStore'
 import { registerStore } from '@/lib/api/auth'
+import { slugify } from '@/lib/utils'
 import type {
   PersonalInfo,
   StoreInfo,
@@ -72,7 +73,15 @@ export default function RegistrationWizard() {
         </h2>
         <p className="text-sm text-slate-500">
           Cửa hàng <strong className="text-slate-700">{registeredUser.storeName}</strong> đã
-          được tạo. Phiên đăng nhập của bạn đã sẵn sàng.
+          được tạo. Truy cập{' '}
+          <a
+            href={`https://${slugify(registeredUser.storeName)}.posso.vn`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary-600 hover:underline"
+          >
+            {slugify(registeredUser.storeName)}.posso.vn
+          </a>
         </p>
       </div>
     )

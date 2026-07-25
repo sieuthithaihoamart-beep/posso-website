@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ArrowLeft, Loader2 } from 'lucide-react'
+import { slugify } from '@/lib/utils'
 import type { StoreInfo } from '@/types'
 
 interface Props {
@@ -17,6 +18,7 @@ export default function StepStore({ onSubmit, onBack, loading, submitError, defa
     storeName: defaultValues?.storeName || '',
   })
   const [errors, setErrors] = useState<Partial<StoreInfo>>({})
+  const subdomain = slugify(form.storeName).replace(/^-+|-+$/g, '')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -45,9 +47,26 @@ export default function StepStore({ onSubmit, onBack, loading, submitError, defa
         {errors.storeName && <p className="mt-1 text-xs text-red-500">{errors.storeName}</p>}
       </div>
 
-      <p className="text-xs text-slate-400">
-        Địa chỉ truy cập sẽ được hệ thống tự động tạo từ tên cửa hàng.
-      </p>
+      <div>
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          Subdomain cửa hàng
+        </label>
+        <div className="flex items-center overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+          <input
+            className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-sm text-slate-500 outline-none disabled:cursor-not-allowed"
+            value={subdomain}
+            placeholder="sub-domain"
+            disabled
+            aria-label="Subdomain cửa hàng"
+          />
+          <span className="border-l border-slate-200 px-3 py-2.5 text-sm text-slate-400">
+            .posso.vn
+          </span>
+        </div>
+        <p className="mt-1 text-xs text-slate-400">
+          Tự động tạo từ tên cửa hàng và không thể chỉnh sửa.
+        </p>
+      </div>
 
       {submitError && (
         <div
