@@ -1,0 +1,80 @@
+import type { PricingPlan } from '@/types'
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    id: 'free',
+    name: 'Miễn phí',
+    tagline: 'Dùng thật sự, không phải bản demo',
+    price: { monthly: 0, yearly: 0, currency: 'VND' },
+    trialDays: 0,
+    limits: { products: 200, branches: 1, staff: 1, storage: '500 MB', support: 'Tài liệu online' },
+    features: [
+      { label: '1 chi nhánh', included: true },
+      { label: 'Tối đa 200 sản phẩm', included: true },
+      { label: '1 tài khoản nhân viên', included: true },
+      { label: 'Bán hàng & thu ngân', included: true },
+      { label: 'Báo cáo cơ bản 7 ngày', included: true },
+      { label: 'Xuất dữ liệu Excel', included: true },
+      { label: 'Quản lý kho nâng cao', included: false },
+      { label: 'Quản lý khách hàng', included: false },
+      { label: 'Nhiều nhân viên', included: false },
+    ],
+    highlighted: false,
+    cta: 'Dùng miễn phí ngay',
+    ctaHref: '/dang-ky',
+    color: 'slate',
+  },
+  {
+    id: 'basic',
+    name: 'Cơ bản',
+    tagline: 'Đủ dùng cho cửa hàng đang phát triển',
+    price: { monthly: 199000, yearly: 159000, currency: 'VND' },
+    trialDays: 14,
+    limits: { products: 'unlimited', branches: 1, staff: 5, storage: '5 GB', support: 'Chat 8h–22h' },
+    features: [
+      { label: '1 chi nhánh', included: true },
+      { label: 'Không giới hạn sản phẩm', included: true, highlight: true },
+      { label: '5 tài khoản nhân viên', included: true },
+      { label: 'Bán hàng & thu ngân', included: true },
+      { label: 'Quản lý kho nâng cao', included: true, highlight: true },
+      { label: 'Quản lý khách hàng & tích điểm', included: true },
+      { label: 'Báo cáo chi tiết 90 ngày', included: true },
+      { label: 'Xuất dữ liệu Excel', included: true },
+      { label: 'Nhiều chi nhánh', included: false },
+    ],
+    highlighted: false,
+    cta: 'Dùng thử 14 ngày miễn phí',
+    ctaHref: '/dang-ky?plan=basic',
+    color: 'primary',
+  },
+  {
+    id: 'pro',
+    name: 'Pro',
+    tagline: 'Cho chuỗi cửa hàng và doanh nghiệp',
+    price: { monthly: 499000, yearly: 399000, currency: 'VND' },
+    trialDays: 14,
+    limits: { products: 'unlimited', branches: 'unlimited', staff: 'unlimited', storage: '50 GB', support: 'Ưu tiên 24/7' },
+    features: [
+      { label: 'Không giới hạn chi nhánh', included: true, highlight: true },
+      { label: 'Không giới hạn sản phẩm', included: true },
+      { label: 'Không giới hạn nhân viên', included: true, highlight: true },
+      { label: 'Quản lý kho đa chi nhánh', included: true },
+      { label: 'Khuyến mãi & mã giảm giá', included: true },
+      { label: 'Báo cáo lợi nhuận chi tiết', included: true },
+      { label: 'Tích hợp Facebook, Zalo OA', included: true },
+      { label: 'API tích hợp', included: true },
+      { label: 'Hỗ trợ ưu tiên 24/7', included: true, highlight: true },
+    ],
+    highlighted: true,
+    badge: 'Phổ biến nhất',
+    cta: 'Dùng thử 14 ngày miễn phí',
+    ctaHref: '/dang-ky?plan=pro',
+    color: 'primary',
+    popular: true,
+  },
+]
+
+export function formatPrice(amount: number): string {
+  if (amount === 0) return 'Miễn phí'
+  return new Intl.NumberFormat('vi-VN').format(amount) + 'đ'
+}
