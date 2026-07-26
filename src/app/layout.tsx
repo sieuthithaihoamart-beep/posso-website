@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer'
 export const metadata: Metadata = {
   metadataBase: new URL('https://posso.vn'),
   title: {
-    default: 'Posso — Phần mềm quản lý bán hàng cho 26 ngành',
+    default: 'POSSO - Phần Mềm Quản Lý Bán Hàng',
     template: '%s | Posso',
   },
   description: 'Posso giúp hơn 5.000 cửa hàng bán lẻ Việt Nam quản lý bán hàng, kho, nhân viên và báo cáo — dễ dùng, giá minh bạch, dùng thử miễn phí.',

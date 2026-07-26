@@ -20,9 +20,8 @@ export default function Navbar() {
       <div className="container-content">
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 font-display font-bold text-2xl text-slate-900 no-underline">
-            <span className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white text-base font-black shadow-sm">P</span>
-            Posso
+          <Link href="/" className="flex items-center no-underline">
+            <img src="/logo-posso.png" alt="Posso" className="h-11 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}

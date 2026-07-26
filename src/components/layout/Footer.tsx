@@ -33,9 +33,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-display font-bold text-lg text-white no-underline mb-4">
-              <span className="w-7 h-7 bg-primary-600 rounded-lg flex items-center justify-center text-white text-sm font-black">P</span>
-              Posso
+            <Link href="/" className="inline-flex items-center bg-white rounded-lg px-2.5 py-1.5 no-underline mb-4">
+              <img src="/logo-posso.png" alt="Posso" className="h-7 w-auto object-contain" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
               Phần mềm quản lý bán hàng dành cho hơn 5.000 cửa hàng Việt Nam.
