@@ -90,7 +90,9 @@ export interface StoresResponse {
 export interface LoginRequest {
   username: string
   password: string
-  storeSlug?: string
+  storeSlug: string
+  deviceId: string
+  deviceName: string
 }
 
 export interface LoginUser {
@@ -109,7 +111,15 @@ export interface LoginResponse {
   success: true
   message: string
   data: {
-    token: string
+    token?: string
+    user: LoginUser
+  }
+}
+
+export interface SessionResponse {
+  success: true
+  message?: string
+  data: {
     user: LoginUser
   }
 }

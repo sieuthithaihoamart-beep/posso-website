@@ -16,4 +16,5 @@ export type {
   LoginRequest,
   LoginUser,
   LoginResponse,
+  SessionResponse,
 } from './feature'

@@ -4,6 +4,7 @@ import type {
   LoginResponse,
   RegisterRequest,
   RegisterResponse,
+  SessionResponse,
   StoresResponse,
 } from '@/types'
 
@@ -15,6 +16,7 @@ const API_BASE_URL =
 
 interface ApiErrorBody {
   success?: false
+  code?: string
   message?: string
 }
 
@@ -32,6 +34,7 @@ export class AuthApiError extends Error {
   constructor(
     message: string,
     public readonly status?: number,
+    public readonly code?: string,
   ) {
     super(message)
     this.name = 'AuthApiError'
@@ -137,6 +140,7 @@ export async function login(payload: LoginRequest): Promise<LoginResponse> {
   try {
     response = await fetch(`${API_BASE_URL}/api/auth/login`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -163,12 +167,56 @@ export async function login(payload: LoginRequest): Promise<LoginResponse> {
     throw new AuthApiError(
       result.message || 'Đăng nhập không thành công. Vui lòng thử lại.',
       response.status,
+      'code' in result ? result.code : undefined,
     )
   }
 
-  if (!result.data?.token || !result.data.user?.storeSlug) {
+  if (!result.data?.user?.storeSlug) {
     throw new AuthApiError(
-      'Phản hồi đăng nhập thiếu thông tin tài khoản hoặc cửa hàng.',
+      'Phản hồi đăng nhập thiếu thông tin cửa hàng.',
+      response.status,
+    )
+  }
+
+  return result
+}
+
+export async function getCurrentSession(): Promise<SessionResponse> {
+  let response: Response
+
+  try {
+    response = await fetch(`${API_BASE_URL}/api/auth/me`, {
+      credentials: 'include',
+      cache: 'no-store',
+    })
+  } catch {
+    throw new AuthApiError(
+      'Không thể kiểm tra phiên đăng nhập. Vui lòng kiểm tra kết nối.',
+    )
+  }
+
+  let result: SessionResponse | ApiErrorBody
+
+  try {
+    result = (await response.json()) as SessionResponse | ApiErrorBody
+  } catch {
+    throw new AuthApiError(
+      'Máy chủ trả về dữ liệu phiên đăng nhập không hợp lệ.',
+      response.status,
+    )
+  }
+
+  if (!response.ok || !result.success) {
+    throw new AuthApiError(
+      result.message || 'Không thể kiểm tra phiên đăng nhập.',
+      response.status,
+      'code' in result ? result.code : undefined,
+    )
+  }
+
+  if (!result.data?.user?.storeSlug) {
+    throw new AuthApiError(
+      'Phản hồi phiên đăng nhập thiếu thông tin cửa hàng.',
       response.status,
     )
   }
