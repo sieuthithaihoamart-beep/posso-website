@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center no-underline">
-            <img src="/logo-posso.png" alt="Posso" className="h-11 w-auto object-contain" />
+            <img src="/logo-posso.png" alt="Posso" className="h-[56px] w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
