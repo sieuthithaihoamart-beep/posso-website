@@ -12,12 +12,11 @@ export default function LoginPage() {
     <div className="min-h-screen bg-hero flex items-center justify-center py-16 px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 font-display font-bold text-2xl text-slate-900 no-underline mb-4">
-            <span className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white font-black text-base">P</span>
-            Posso
+          <Link href="/" className="inline-flex items-center no-underline mb-4">
+            <img src="/logo-posso.png" alt="Posso" className="h-14 w-auto object-contain" />
           </Link>
           <h1 className="text-2xl font-bold font-display text-slate-900">Đăng nhập</h1>
-          <p className="text-slate-500 mt-1 text-sm">
+          <p className="text-black mt-1 text-sm">
             Chào mừng trở lại! Nhập thông tin tài khoản để tiếp tục.
           </p>
         </div>
@@ -26,7 +25,7 @@ export default function LoginPage() {
           <LoginForm />
         </div>
 
-        <p className="text-center text-sm text-slate-500 mt-6">
+        <p className="text-center text-sm text-black mt-6">
           Chưa có tài khoản?{' '}
           <Link href="/dang-ky" className="text-primary-600 font-medium hover:underline">
             Đăng ký miễn phí

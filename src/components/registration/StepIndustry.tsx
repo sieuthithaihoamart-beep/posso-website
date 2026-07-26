@@ -18,7 +18,7 @@ export default function StepIndustry({ onNext, onBack, selected }: Props) {
     <div className="flex flex-col gap-5">
       <div>
         <h2 className="text-xl font-bold font-display text-slate-900 mb-1">Ngành kinh doanh</h2>
-        <p className="text-sm text-slate-500">Chọn ngành phù hợp để Posso gợi ý tính năng tốt nhất cho cửa hàng bạn.</p>
+        <p className="text-sm text-black">Chọn ngành phù hợp để Posso gợi ý tính năng tốt nhất cho cửa hàng bạn.</p>
       </div>
 
       <div className="grid grid-cols-3 gap-2 max-h-72 overflow-y-auto pr-1">

@@ -33,7 +33,7 @@ export default function PricingPreview() {
 
               <div className="mb-5">
                 <h3 className="text-lg font-bold text-slate-900 mb-1">{plan.name}</h3>
-                <p className="text-sm text-slate-500">{plan.tagline}</p>
+                <p className="text-sm text-black">{plan.tagline}</p>
               </div>
 
               <div className="mb-6">
@@ -41,7 +41,7 @@ export default function PricingPreview() {
                   {formatPrice(plan.price.monthly)}
                 </span>
                 {plan.price.monthly > 0 && (
-                  <span className="text-slate-400 text-sm ml-1">/tháng</span>
+                  <span className="text-black text-sm ml-1">/tháng</span>
                 )}
               </div>
 
@@ -52,7 +52,7 @@ export default function PricingPreview() {
                       size={15}
                       className={f.included ? 'text-green-500 flex-shrink-0' : 'text-slate-200 flex-shrink-0'}
                     />
-                    <span className={f.included ? 'text-slate-700' : 'text-slate-300 line-through'}>
+                    <span className={f.included ? 'text-black' : 'text-slate-300 line-through'}>
                       {f.label}
                     </span>
                   </li>

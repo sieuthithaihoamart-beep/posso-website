@@ -23,7 +23,7 @@ export default function SectionHeader({ badge, title, subtitle, align = 'center'
         {title}
       </h2>
       {subtitle && (
-        <p className={cn('text-slate-500 text-lg leading-relaxed', align === 'center' ? 'max-w-2xl mx-auto' : 'max-w-2xl')}>
+        <p className={cn('text-black text-lg leading-relaxed', align === 'center' ? 'max-w-2xl mx-auto' : 'max-w-2xl')}>
           {subtitle}
         </p>
       )}

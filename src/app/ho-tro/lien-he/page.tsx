@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="section bg-hero">
         <div className="container-content text-center max-w-xl mx-auto">
           <h1 className="text-4xl font-bold font-display text-slate-900 mb-4">Liên hệ với chúng tôi</h1>
-          <p className="text-lg text-slate-600">Đội hỗ trợ người Việt, hiểu nghiệp vụ cửa hàng — phản hồi nhanh trong mọi khung giờ.</p>
+          <p className="text-lg text-black">Đội hỗ trợ người Việt, hiểu nghiệp vụ cửa hàng — phản hồi nhanh trong mọi khung giờ.</p>
         </div>
       </section>
 
@@ -36,9 +36,9 @@ export default function ContactPage() {
                     <c.icon size={20} />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{c.label}</p>
+                    <p className="text-xs font-semibold text-black uppercase tracking-wide">{c.label}</p>
                     <p className="font-semibold text-slate-800 group-hover:text-primary-600 transition-colors">{c.value}</p>
-                    <p className="text-sm text-slate-500">{c.sub}</p>
+                    <p className="text-sm text-black">{c.sub}</p>
                   </div>
                 </a>
               ))}
@@ -61,7 +61,7 @@ export default function ContactPage() {
                   <textarea className="input resize-none" rows={4} placeholder="Mô tả vấn đề bạn cần hỗ trợ..." />
                 </div>
                 <button className="btn btn-primary w-full justify-center">Gửi tin nhắn</button>
-                <p className="text-xs text-slate-400 text-center">Chúng tôi phản hồi trong vòng 2 giờ làm việc</p>
+                <p className="text-xs text-black text-center">Chúng tôi phản hồi trong vòng 2 giờ làm việc</p>
               </div>
             </div>
           </div>

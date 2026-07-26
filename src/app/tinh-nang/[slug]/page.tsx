@@ -171,7 +171,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
             <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 mb-4 leading-tight">
               {detail?.hero || feature.name}
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed mb-8">{feature.shortDescription}</p>
+            <p className="text-xl text-black leading-relaxed mb-8">{feature.shortDescription}</p>
             <Link href="/dang-ky" className="btn btn-primary btn-lg">
               Dùng thử miễn phí <ArrowRight size={16} />
             </Link>
@@ -185,7 +185,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
           <div className="container-content max-w-3xl">
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
               <p className="text-sm font-semibold text-amber-700 mb-2">Vấn đề thường gặp</p>
-              <p className="text-slate-700 leading-relaxed">{detail.pain}</p>
+              <p className="text-black leading-relaxed">{detail.pain}</p>
             </div>
           </div>
         </section>
@@ -201,7 +201,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
                 <div className="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
                   {i + 1}
                 </div>
-                <p className="text-slate-700 leading-relaxed pt-1">{step}</p>
+                <p className="text-black leading-relaxed pt-1">{step}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
               {detail.useCases.map((uc) => (
                 <div key={uc.industry} className="card p-6">
                   <p className="font-bold text-primary-700 text-sm mb-2">{uc.industry}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{uc.example}</p>
+                  <p className="text-black text-sm leading-relaxed">{uc.example}</p>
                 </div>
               ))}
             </div>
@@ -233,7 +233,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
             {feature.details.map((d) => (
               <div key={d} className="flex items-start gap-3">
                 <Check size={18} className="text-green-500 shrink-0 mt-0.5" />
-                <span className="text-slate-700">{d}</span>
+                <span className="text-black">{d}</span>
               </div>
             ))}
           </div>
@@ -249,7 +249,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
               {detail.faq.map((item) => (
                 <div key={item.q} className="card p-6">
                   <p className="font-semibold text-slate-800 mb-2">{item.q}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
+                  <p className="text-black text-sm leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -267,7 +267,7 @@ export default async function FeatureDetailPage({ params }: { params: Promise<{ 
                 <span className="text-2xl">{f.emoji}</span>
                 <div>
                   <p className="font-semibold text-slate-800 group-hover:text-primary-600 transition-colors text-sm">{f.name}</p>
-                  <p className="text-xs text-slate-400 mt-0.5 leading-snug">{f.shortDescription.slice(0, 60)}…</p>
+                  <p className="text-xs text-black mt-0.5 leading-snug">{f.shortDescription.slice(0, 60)}…</p>
                 </div>
               </Link>
             ))}

@@ -32,7 +32,7 @@ export default function FAQSection() {
                 />
               </button>
               {open === faq.id && (
-                <p className="pb-5 text-sm text-slate-500 leading-relaxed">{faq.answer}</p>
+                <p className="pb-5 text-sm text-black leading-relaxed">{faq.answer}</p>
               )}
             </div>
           ))}

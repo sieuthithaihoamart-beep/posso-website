@@ -26,7 +26,7 @@ export default function CustomersPage() {
           <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 mb-4">
             Được <span className="text-gradient">tin tưởng</span> bởi<br />hàng trăm cửa hàng
           </h1>
-          <p className="text-lg text-slate-600">Từ tạp hóa nhỏ ở thôn quê đến chuỗi cửa hàng thời trang tại thành phố — Posso phục vụ mọi quy mô.</p>
+          <p className="text-lg text-black">Từ tạp hóa nhỏ ở thôn quê đến chuỗi cửa hàng thời trang tại thành phố — Posso phục vụ mọi quy mô.</p>
         </div>
       </section>
 
@@ -37,7 +37,7 @@ export default function CustomersPage() {
             {STATS.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-3xl font-bold font-display text-primary-600 mb-1">{s.value}</div>
-                <div className="text-sm text-slate-500">{s.label}</div>
+                <div className="text-sm text-black">{s.label}</div>
               </div>
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function CustomersPage() {
                     <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <blockquote className="text-slate-700 text-sm leading-relaxed flex-1">
+                <blockquote className="text-black text-sm leading-relaxed flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-3 pt-2 border-t border-slate-50">
@@ -65,7 +65,7 @@ export default function CustomersPage() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-slate-800">{t.author}</p>
-                    <p className="text-xs text-slate-400">{t.role} · {t.store}</p>
+                    <p className="text-xs text-black">{t.role} · {t.store}</p>
                   </div>
                 </div>
               </div>

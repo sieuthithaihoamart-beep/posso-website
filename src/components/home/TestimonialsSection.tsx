@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <p className="text-slate-700 text-sm leading-relaxed flex-1">
+              <p className="text-black text-sm leading-relaxed flex-1">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-slate-900">{t.author}</p>
-                  <p className="text-xs text-slate-400">{t.store}</p>
+                  <p className="text-xs text-black">{t.store}</p>
                 </div>
               </div>
             </div>

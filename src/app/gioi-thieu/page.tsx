@@ -35,7 +35,7 @@ export default function AboutPage() {
             Phần mềm bán hàng<br />
             <span className="text-gradient">cho người Việt</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-black leading-relaxed">
             Posso ra đời từ những cửa hàng thực tế — nơi mà mỗi đơn hàng cần xử lý nhanh,
             mỗi báo cáo cần dễ đọc, và mỗi đồng doanh thu cần được theo dõi chính xác.
           </p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold font-display text-slate-900 mb-6">
                 Giúp mỗi cửa hàng Việt vận hành chuyên nghiệp hơn
               </h2>
-              <div className="flex flex-col gap-4 text-slate-600 leading-relaxed">
+              <div className="flex flex-col gap-4 text-black leading-relaxed">
                 <p>
                   Hàng triệu cửa hàng nhỏ và vừa tại Việt Nam vẫn đang ghi chép bằng tay, dùng Excel, hoặc
                   phần mềm nước ngoài không phù hợp với nghiệp vụ địa phương.
@@ -71,7 +71,7 @@ export default function AboutPage() {
               ].map((stat) => (
                 <div key={stat.label} className="bg-primary-50 rounded-2xl p-6 text-center border border-primary-100">
                   <div className="text-3xl font-bold font-display text-primary-700 mb-1">{stat.value}</div>
-                  <div className="text-xs text-slate-500">{stat.label}</div>
+                  <div className="text-xs text-black">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               <div key={v.title} className="card p-6">
                 <div className="text-3xl mb-4">{v.emoji}</div>
                 <h3 className="font-bold font-display text-slate-900 mb-2">{v.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{v.desc}</p>
+                <p className="text-sm text-black leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 <div className="pb-10">
                   <p className="text-xs text-primary-600 font-semibold mb-1">{m.year}</p>
                   <h3 className="font-bold font-display text-slate-900 mb-1">{m.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{m.desc}</p>
+                  <p className="text-sm text-black leading-relaxed">{m.desc}</p>
                 </div>
               </div>
             ))}

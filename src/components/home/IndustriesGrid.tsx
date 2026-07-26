@@ -28,7 +28,7 @@ export default function IndustriesGrid({ limit = 12, showViewAll = true }: Props
               className="group flex flex-col items-center gap-2 p-4 rounded-2xl bg-white border border-slate-100 hover:border-primary-200 hover:shadow-md transition-all duration-200 no-underline text-center"
             >
               <span className="text-3xl">{industry.emoji}</span>
-              <span className="text-xs font-medium text-slate-700 group-hover:text-primary-600 transition-colors leading-tight">
+              <span className="text-xs font-medium text-black group-hover:text-primary-600 transition-colors leading-tight">
                 {industry.name}
               </span>
             </Link>

@@ -366,7 +366,7 @@ export default function LoginForm() {
         )}
       </button>
 
-      <p className="text-xs text-slate-400 text-center">
+      <p className="text-xs text-black text-center">
         Bằng cách đăng nhập, bạn đồng ý với{' '}
         <a href="/chinh-sach/dieu-khoan" className="underline hover:text-primary-600">
           Điều khoản sử dụng

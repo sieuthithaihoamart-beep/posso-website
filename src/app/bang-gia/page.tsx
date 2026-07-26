@@ -47,7 +47,7 @@ export default function PricingPage() {
 
                 <div className="mb-6">
                   <h2 className="text-xl font-bold text-slate-900 mb-1">{plan.name}</h2>
-                  <p className="text-sm text-slate-500">{plan.tagline}</p>
+                  <p className="text-sm text-black">{plan.tagline}</p>
                 </div>
 
                 <div className="mb-2">
@@ -55,7 +55,7 @@ export default function PricingPage() {
                     {formatPrice(plan.price.monthly)}
                   </span>
                   {plan.price.monthly > 0 && (
-                    <span className="text-slate-400 text-sm ml-1">/tháng</span>
+                    <span className="text-black text-sm ml-1">/tháng</span>
                   )}
                 </div>
                 {plan.price.monthly > 0 && (
@@ -73,7 +73,7 @@ export default function PricingPage() {
                       ) : (
                         <X size={15} className="text-slate-200 flex-shrink-0 mt-0.5" />
                       )}
-                      <span className={f.included ? (f.highlight ? 'text-slate-900 font-medium' : 'text-slate-700') : 'text-slate-300'}>
+                      <span className={f.included ? (f.highlight ? 'text-slate-900 font-medium' : 'text-black') : 'text-slate-300'}>
                         {f.label}
                       </span>
                     </li>
@@ -92,7 +92,7 @@ export default function PricingPage() {
 
           {/* Guarantee */}
           <div className="mt-12 text-center">
-            <p className="text-slate-500 text-sm">
+            <p className="text-black text-sm">
               ✅ Dùng thử 14 ngày miễn phí · Hủy bất cứ lúc nào · Hoàn tiền 30 ngày nếu không hài lòng
             </p>
           </div>

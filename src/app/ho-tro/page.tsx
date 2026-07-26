@@ -55,7 +55,7 @@ export default function SupportPage() {
           <h1 className="text-4xl md:text-5xl font-bold font-display text-slate-900 mb-4">
             Chúng tôi luôn <span className="text-gradient">sẵn sàng</span> giúp bạn
           </h1>
-          <p className="text-lg text-slate-600">Đội ngũ hỗ trợ người Việt, hiểu nghiệp vụ cửa hàng, trả lời nhanh trong mọi khung giờ.</p>
+          <p className="text-lg text-black">Đội ngũ hỗ trợ người Việt, hiểu nghiệp vụ cửa hàng, trả lời nhanh trong mọi khung giờ.</p>
         </div>
       </section>
 
@@ -69,9 +69,9 @@ export default function SupportPage() {
                   <ch.icon size={22} className={ch.color.split(' ')[0]} />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">{ch.title}</p>
+                  <p className="text-xs font-semibold text-black uppercase tracking-wide mb-1">{ch.title}</p>
                   <p className="font-bold font-display text-slate-900 text-lg">{ch.value}</p>
-                  <p className="text-sm text-slate-500 mt-1">{ch.desc}</p>
+                  <p className="text-sm text-black mt-1">{ch.desc}</p>
                 </div>
                 <a href={ch.href} className="btn btn-secondary btn-sm self-start">
                   {ch.cta}
@@ -98,7 +98,7 @@ export default function SupportPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-800 group-hover:text-primary-600 transition-colors">{r.title}</p>
-                  <p className="text-sm text-slate-500 mt-0.5">{r.desc}</p>
+                  <p className="text-sm text-black mt-0.5">{r.desc}</p>
                 </div>
               </a>
             ))}

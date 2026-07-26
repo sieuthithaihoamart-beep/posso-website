@@ -90,8 +90,8 @@ export default function PrivacyPage() {
       <section className="section bg-hero border-b border-slate-100">
         <div className="container-content max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold font-display text-slate-900 mb-3">Chính sách bảo mật</h1>
-          <p className="text-slate-500 text-sm">Cập nhật lần cuối: 1 tháng 7, 2026</p>
-          <p className="text-slate-600 mt-4 leading-relaxed">
+          <p className="text-black text-sm">Cập nhật lần cuối: 1 tháng 7, 2026</p>
+          <p className="text-black mt-4 leading-relaxed">
             Posso cam kết bảo vệ quyền riêng tư và dữ liệu kinh doanh của bạn. Chính sách này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
             {SECTIONS.map((s) => (
               <div key={s.title}>
                 <h2 className="text-lg font-bold font-display text-slate-900 mb-3">{s.title}</h2>
-                <div className="text-slate-600 leading-relaxed space-y-3">
+                <div className="text-black leading-relaxed space-y-3">
                   {s.body.split('\n\n').map((para, i) => (
                     <p key={i} dangerouslySetInnerHTML={{
                       __html: para.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/^- (.+)$/gm, '• $1'),

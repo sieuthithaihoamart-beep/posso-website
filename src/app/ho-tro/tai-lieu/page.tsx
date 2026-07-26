@@ -60,7 +60,7 @@ export default function DocumentationPage() {
           <h1 className="text-4xl font-bold font-display text-slate-900 mb-4">
             Tài liệu hướng dẫn
           </h1>
-          <p className="text-lg text-slate-600">Từng bước rõ ràng, video trực quan — bắt đầu trong 15 phút.</p>
+          <p className="text-lg text-black">Từng bước rõ ràng, video trực quan — bắt đầu trong 15 phút.</p>
         </div>
       </section>
 
@@ -96,9 +96,9 @@ export default function DocumentationPage() {
                     <a key={a.title} href="#" className="flex items-center justify-between py-2.5 border-b border-slate-50 last:border-0 group no-underline">
                       <div className="flex items-center gap-2">
                         <FileText size={14} className="text-slate-300 shrink-0" />
-                        <span className="text-sm text-slate-700 group-hover:text-primary-600 transition-colors">{a.title}</span>
+                        <span className="text-sm text-black group-hover:text-primary-600 transition-colors">{a.title}</span>
                       </div>
-                      <span className="text-xs text-slate-400 shrink-0 ml-2">{a.time}</span>
+                      <span className="text-xs text-black shrink-0 ml-2">{a.time}</span>
                     </a>
                   ))}
                 </div>
@@ -111,7 +111,7 @@ export default function DocumentationPage() {
       {/* CTA to support */}
       <section className="py-12 bg-slate-50">
         <div className="container-content text-center">
-          <p className="text-slate-600 mb-4">Không tìm thấy câu trả lời? Đội hỗ trợ luôn sẵn sàng.</p>
+          <p className="text-black mb-4">Không tìm thấy câu trả lời? Đội hỗ trợ luôn sẵn sàng.</p>
           <Link href="/ho-tro" className="btn btn-primary">Liên hệ hỗ trợ</Link>
         </div>
       </section>

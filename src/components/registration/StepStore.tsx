@@ -32,7 +32,7 @@ export default function StepStore({ onSubmit, onBack, loading, submitError, defa
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div>
         <h2 className="text-xl font-bold font-display text-slate-900 mb-1">Thông tin cửa hàng</h2>
-        <p className="text-sm text-slate-500">Đặt tên cho cửa hàng mới của bạn.</p>
+        <p className="text-sm text-black">Đặt tên cho cửa hàng mới của bạn.</p>
       </div>
 
       <div>

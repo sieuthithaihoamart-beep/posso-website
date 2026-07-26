@@ -14,7 +14,7 @@ export default function RegisterPage() {
           <h1 className="text-2xl md:text-3xl font-bold font-display text-slate-900 mb-2">
             Tạo cửa hàng của bạn
           </h1>
-          <p className="text-slate-500">Miễn phí · Không cần thẻ tín dụng · Bắt đầu trong 2 phút</p>
+          <p className="text-black">Miễn phí · Không cần thẻ tín dụng · Bắt đầu trong 2 phút</p>
         </div>
         <RegistrationWizard />
       </div>

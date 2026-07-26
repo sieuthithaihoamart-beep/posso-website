@@ -37,7 +37,7 @@ export default async function IndustryDetailPage({ params }: Props) {
       {/* Breadcrumb */}
       <div className="bg-slate-50 border-b border-slate-100">
         <div className="container-content py-3">
-          <nav className="flex items-center gap-2 text-sm text-slate-500">
+          <nav className="flex items-center gap-2 text-sm text-black">
             <Link href="/" className="hover:text-primary-600 no-underline">Trang chủ</Link>
             <ChevronRight size={14} />
             <Link href="/nganh-hang" className="hover:text-primary-600 no-underline">Ngành hàng</Link>
@@ -58,7 +58,7 @@ export default async function IndustryDetailPage({ params }: Props) {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-slate-900 mb-5 leading-tight">
               {industry.headline}
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg text-black leading-relaxed mb-8 max-w-2xl">
               {industry.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -83,7 +83,7 @@ export default async function IndustryDetailPage({ params }: Props) {
               <h2 className="text-2xl md:text-3xl font-bold font-display text-slate-900 mb-4 leading-tight">
                 Những khó khăn thường gặp khi quản lý {industry.name.toLowerCase()}
               </h2>
-              <p className="text-slate-500 leading-relaxed">
+              <p className="text-black leading-relaxed">
                 {industry.description}
               </p>
             </div>
@@ -93,7 +93,7 @@ export default async function IndustryDetailPage({ params }: Props) {
               <h3 className="font-semibold text-slate-800 mb-4">Posso giải quyết với:</h3>
               <ul className="flex flex-col gap-3">
                 {industry.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm text-slate-700">
+                  <li key={f} className="flex items-center gap-3 text-sm text-black">
                     <span className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                       <Check size={12} className="text-green-600" />
                     </span>
@@ -118,7 +118,7 @@ export default async function IndustryDetailPage({ params }: Props) {
                 className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 hover:border-primary-200 hover:shadow-sm transition-all no-underline"
               >
                 <span className="text-2xl">{r.emoji}</span>
-                <span className="text-sm font-medium text-slate-700 leading-tight">{r.name}</span>
+                <span className="text-sm font-medium text-black leading-tight">{r.name}</span>
               </Link>
             ))}
           </div>

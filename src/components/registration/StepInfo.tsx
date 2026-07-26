@@ -45,7 +45,7 @@ export default function StepInfo({ onNext, defaultValues }: Props) {
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div>
         <h2 className="text-xl font-bold font-display text-slate-900 mb-1">Thông tin của bạn</h2>
-        <p className="text-sm text-slate-500">Chúng tôi cần một vài thông tin để tạo tài khoản.</p>
+        <p className="text-sm text-black">Chúng tôi cần một vài thông tin để tạo tài khoản.</p>
       </div>
 
       <div>

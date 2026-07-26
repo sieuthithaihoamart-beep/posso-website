@@ -19,7 +19,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Sub */}
-          <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-black leading-relaxed mb-10 max-w-2xl mx-auto">
             Posso giúp chủ cửa hàng bán hàng, quản kho, báo cáo doanh thu — tất cả trên một nền tảng, mở ngay trên điện thoại, không cần cài đặt.
           </p>
 
@@ -36,7 +36,7 @@ export default function HeroSection() {
           </div>
 
           {/* Trust */}
-          <p className="mt-6 text-sm text-slate-400">
+          <p className="mt-6 text-sm text-black">
             Không cần thẻ tín dụng · Bắt đầu trong 5 phút · Hủy bất cứ lúc nào
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function HeroSection() {
                 <div className="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
               <div className="flex-1 bg-white rounded-md h-5 mx-4 flex items-center px-3">
-                <span className="text-xs text-slate-400">cửahàng.posso.vn</span>
+                <span className="text-xs text-black">cửahàng.posso.vn</span>
               </div>
             </div>
             {/* App preview */}
@@ -62,7 +62,7 @@ export default function HeroSection() {
                 { label: 'Sản phẩm sắp hết', value: '3', color: 'text-orange-600' },
               ].map((stat) => (
                 <div key={stat.label} className="card p-4">
-                  <p className="text-xs text-slate-500 mb-1">{stat.label}</p>
+                  <p className="text-xs text-black mb-1">{stat.label}</p>
                   <p className={`text-xl font-bold font-display ${stat.color}`}>{stat.value}</p>
                 </div>
               ))}

@@ -38,7 +38,7 @@ export default function IndustriesPage() {
                   <h3 className={`font-semibold text-slate-900 group-hover:text-primary-600 transition-colors mb-1 ${industry.colorClass}`}>
                     {industry.name}
                   </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed line-clamp-2">
+                  <p className="text-sm text-black leading-relaxed line-clamp-2">
                     {industry.shortDescription}
                   </p>
                 </div>

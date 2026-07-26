@@ -37,10 +37,10 @@ export default function FeaturesPage() {
                     {feature.emoji}
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold font-display text-slate-900 mb-4">{feature.name}</h2>
-                  <p className="text-slate-500 leading-relaxed mb-6">{feature.description}</p>
+                  <p className="text-black leading-relaxed mb-6">{feature.description}</p>
                   <ul className="flex flex-col gap-2.5">
                     {feature.details.map((d) => (
-                      <li key={d} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <li key={d} className="flex items-start gap-2.5 text-sm text-black">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 flex-shrink-0"></span>
                         {d}
                       </li>
