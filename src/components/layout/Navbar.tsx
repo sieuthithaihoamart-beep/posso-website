@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center no-underline">
-            <img src="/logo-posso.png" alt="Posso" className="h-16 w-auto object-contain" />
+            <img src="/logo-posso.png" alt="Posso" className="h-[70px] w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
@@ -30,7 +30,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors no-underline"
+                className="text-base font-bold text-slate-700 hover:text-primary-600 transition-colors no-underline"
               >
                 {link.label}
               </Link>
