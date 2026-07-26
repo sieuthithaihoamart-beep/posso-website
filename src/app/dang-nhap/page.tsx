@@ -17,7 +17,9 @@ export default function LoginPage() {
             Posso
           </Link>
           <h1 className="text-2xl font-bold font-display text-slate-900">Đăng nhập</h1>
-          <p className="text-slate-500 mt-1 text-sm">Chào mừng trở lại! Nhập số điện thoại để tiếp tục.</p>
+          <p className="text-slate-500 mt-1 text-sm">
+            Chào mừng trở lại! Nhập thông tin tài khoản để tiếp tục.
+          </p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-card border border-slate-100 p-8">

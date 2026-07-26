@@ -74,3 +74,42 @@ export interface RegisterResponse {
     user: RegisteredUser
   }
 }
+
+export interface AuthStore {
+  id: string
+  name: string
+  slug: string
+}
+
+export interface StoresResponse {
+  success: true
+  message: string
+  data: AuthStore[]
+}
+
+export interface LoginRequest {
+  username: string
+  password: string
+  storeSlug?: string
+}
+
+export interface LoginUser {
+  id: string
+  name: string
+  username: string
+  role: string
+  permissions: Record<string, unknown>
+  storeId: string
+  storeName: string
+  storeSlug: string
+  branchId: string | null
+}
+
+export interface LoginResponse {
+  success: true
+  message: string
+  data: {
+    token: string
+    user: LoginUser
+  }
+}

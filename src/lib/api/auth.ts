@@ -1,4 +1,11 @@
-import type { RegisterRequest, RegisterResponse } from '@/types'
+import type {
+  AuthStore,
+  LoginRequest,
+  LoginResponse,
+  RegisterRequest,
+  RegisterResponse,
+  StoresResponse,
+} from '@/types'
 
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ??
@@ -18,6 +25,16 @@ export class RegisterApiError extends Error {
   ) {
     super(message)
     this.name = 'RegisterApiError'
+  }
+}
+
+export class AuthApiError extends Error {
+  constructor(
+    message: string,
+    public readonly status?: number,
+  ) {
+    super(message)
+    this.name = 'AuthApiError'
   }
 }
 
@@ -61,6 +78,97 @@ export async function registerStore(
   if (!result.data?.token || !result.data.user) {
     throw new RegisterApiError(
       'Phản hồi đăng ký thiếu thông tin phiên đăng nhập.',
+      response.status,
+    )
+  }
+
+  return result
+}
+
+export async function getStoresByUsername(
+  username: string,
+  signal?: AbortSignal,
+): Promise<AuthStore[]> {
+  const url = new URL(`${API_BASE_URL}/api/auth/stores`)
+  url.searchParams.set('username', username.trim())
+
+  let response: Response
+
+  try {
+    response = await fetch(url, { signal })
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') throw error
+    throw new AuthApiError(
+      'Không thể tải danh sách cửa hàng. Vui lòng kiểm tra kết nối.',
+    )
+  }
+
+  let result: StoresResponse | ApiErrorBody
+
+  try {
+    result = (await response.json()) as StoresResponse | ApiErrorBody
+  } catch {
+    throw new AuthApiError(
+      'Máy chủ trả về danh sách cửa hàng không hợp lệ.',
+      response.status,
+    )
+  }
+
+  if (!response.ok || !result.success) {
+    throw new AuthApiError(
+      result.message || 'Không thể tải danh sách cửa hàng.',
+      response.status,
+    )
+  }
+
+  if (!Array.isArray(result.data)) {
+    throw new AuthApiError(
+      'Phản hồi danh sách cửa hàng không đúng định dạng.',
+      response.status,
+    )
+  }
+
+  return result.data
+}
+
+export async function login(payload: LoginRequest): Promise<LoginResponse> {
+  let response: Response
+
+  try {
+    response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+  } catch {
+    throw new AuthApiError(
+      'Không thể kết nối tới máy chủ. Vui lòng kiểm tra kết nối và thử lại.',
+    )
+  }
+
+  let result: LoginResponse | ApiErrorBody
+
+  try {
+    result = (await response.json()) as LoginResponse | ApiErrorBody
+  } catch {
+    throw new AuthApiError(
+      'Máy chủ trả về dữ liệu đăng nhập không hợp lệ.',
+      response.status,
+    )
+  }
+
+  if (!response.ok || !result.success) {
+    throw new AuthApiError(
+      result.message || 'Đăng nhập không thành công. Vui lòng thử lại.',
+      response.status,
+    )
+  }
+
+  if (!result.data?.token || !result.data.user?.storeSlug) {
+    throw new AuthApiError(
+      'Phản hồi đăng nhập thiếu thông tin tài khoản hoặc cửa hàng.',
       response.status,
     )
   }

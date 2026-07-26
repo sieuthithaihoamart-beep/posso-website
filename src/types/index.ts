@@ -11,4 +11,9 @@ export type {
   RegisterRequest,
   RegisteredUser,
   RegisterResponse,
+  AuthStore,
+  StoresResponse,
+  LoginRequest,
+  LoginUser,
+  LoginResponse,
 } from './feature'
